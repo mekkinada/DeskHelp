@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Decbug" table="decbug" catalog="deskhelp" optimistic-lock="version">
+        <id name="idDecbug" type="int">
+            <column name="ID_DECBUG" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="ticket" class="com.hibernate.entities.Ticket" fetch="select">
+            <column name="ID_TICKET" />
+        </many-to-one>
+        <many-to-one name="user" class="com.hibernate.entities.User" fetch="select">
+            <column name="ID_USER" />
+        </many-to-one>
+        <property name="datedebut" type="date">
+            <column name="DATEDEBUT" length="10" />
+        </property>
+        <property name="datefin" type="date">
+            <column name="DATEFIN" length="10" />
+        </property>
+        <property name="titre" type="string">
+            <column name="TITRE" length="100" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="100" />
+        </property>
+        <property name="activeDecbug" type="string">
+            <column name="ACTIVE_DECBUG" length="100" />
+        </property>
+        <property name="rqActiveDecbug" type="string">
+            <column name="RQ_ACTIVE_DECBUG" length="100" />
+        </property>
+        <set name="clientDecbugs" table="client_decbug" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_DECBUG" />
+            </key>
+            <one-to-many class="com.hibernate.entities.ClientDecbug" />
+        </set>
+    </class>
+</hibernate-mapping>

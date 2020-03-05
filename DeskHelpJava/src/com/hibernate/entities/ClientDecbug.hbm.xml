@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.entities.ClientDecbug" table="client_decbug" catalog="deskhelp" optimistic-lock="version">
+        <id name="idClientDecbug" type="java.lang.Integer">
+            <column name="ID_CLIENT_DECBUG" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="client" class="com.hibernate.entities.Client" fetch="select">
+            <column name="ID_CLIENT" />
+        </many-to-one>
+        <many-to-one name="decbug" class="com.hibernate.entities.Decbug" fetch="select">
+            <column name="ID_DECBUG" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

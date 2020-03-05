@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="deskhelp"/>
+  <table-filter match-name="type_user"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="decbug"/>
+  <table-filter match-name="type_client"/>
+  <table-filter match-name="ticket"/>
+  <table-filter match-name="client"/>
+  <table-filter match-name="client_decbug"/>
+</hibernate-reverse-engineering>

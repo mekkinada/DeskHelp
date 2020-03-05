@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Ticket" table="ticket" catalog="deskhelp" optimistic-lock="version">
+        <id name="idTicket" type="int">
+            <column name="ID_TICKET" />
+            <generator class="assigned" />
+        </id>
+        <property name="code" type="java.lang.Integer">
+            <column name="CODE" />
+        </property>
+        <property name="dateDebutTicket" type="date">
+            <column name="DATE_DEBUT_TICKET" length="10" />
+        </property>
+        <property name="dateDubetTicket" type="date">
+            <column name="DATE_DUBET_TICKET" length="10" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="100" />
+        </property>
+        <property name="activeTicket" type="string">
+            <column name="ACTIVE_TICKET" length="100" />
+        </property>
+        <property name="rqActiveTicket" type="string">
+            <column name="RQ_ACTIVE_TICKET" length="100" />
+        </property>
+        <set name="decbugs" table="decbug" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_TICKET" />
+            </key>
+            <one-to-many class="com.hibernate.entities.Decbug" />
+        </set>
+    </class>
+</hibernate-mapping>

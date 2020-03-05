@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.entities.Client" table="client" catalog="deskhelp" optimistic-lock="version">
+        <id name="idClient" type="int">
+            <column name="ID_CLIENT" />
+            <generator class="assigned" />
+        </id>
+        <property name="idTypeClient" type="string">
+            <column name="ID_TYPE_CLIENT" />
+        </property>
+        <property name="pwdUser" type="string">
+            <column name="PWD_USER" length="100" />
+        </property>
+        <property name="nom" type="string">
+            <column name="NOM" length="100" />
+        </property>
+        <property name="prenom" type="string">
+            <column name="PRENOM" length="100" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" />
+        </property>
+        <property name="telf" type="java.lang.Integer">
+            <column name="TELF" />
+        </property>
+        <property name="email1Used" type="string">
+            <column name="EMAIL1_USED" />
+        </property>
+        <set name="clientDecbugs" table="client_decbug" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CLIENT" />
+            </key>
+            <one-to-many class="com.hibernate.entities.ClientDecbug" />
+        </set>
+    </class>
+</hibernate-mapping>

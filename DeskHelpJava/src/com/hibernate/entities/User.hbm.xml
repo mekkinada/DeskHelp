@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.hibernate.entities.User" table="user" catalog="deskhelp" optimistic-lock="version">
+        <id name="idUser" type="int">
+            <column name="ID_USER" />
+            <generator class="assigned" />
+        </id>
+        <property name="idTypeUser" type="string">
+            <column name="ID_TYPE_USER" />
+        </property>
+        <property name="pwdUser" type="string">
+            <column name="PWD_USER" />
+        </property>
+        <property name="nameUsedAr" type="string">
+            <column name="NAME_USED_AR" />
+        </property>
+        <property name="firstNameUsedAr" type="string">
+            <column name="FIRST_NAME_USED_AR" />
+        </property>
+        <property name="telfUsedPers" type="java.lang.Integer">
+            <column name="TELF_USED_PERS" />
+        </property>
+        <property name="sexUsed" type="string">
+            <column name="SEX_USED" />
+        </property>
+        <property name="email1Used" type="string">
+            <column name="EMAIL1_USED" />
+        </property>
+        <property name="address1Used" type="string">
+            <column name="ADDRESS1_USED" />
+        </property>
+        <set name="decbugs" table="decbug" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_USER" />
+            </key>
+            <one-to-many class="com.hibernate.entities.Decbug" />
+        </set>
+    </class>
+</hibernate-mapping>
