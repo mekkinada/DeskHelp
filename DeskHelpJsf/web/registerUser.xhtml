@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+              xmlns:p="http://primefaces.org/ui"
+
+      >
+    <f:view transient="true" >
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+            <ui:define name="header"  >
+      <img src="resources/css/arabsoft.png"       width="180" align="left" /> 
+                
+           </ui:define>
+            
+            <ui:define name="content">
+       
+                
+                <center>
+                
+                 <h2 style="color:  midnightblue">Register un User </h2>
+                 
+               </center>
+               
+            <img src="resources/css/adminnew.png" style=" margin: 160px"   align="right"   /> 
+      
+                  
+                <div class="container">
+                    <f:view>
+                        <h:form class="form-horizontal" >
+   
+                 <p:outputLabel value="code : "  class="" />
+                 <p:inputText value="#{userController.use.idUser}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer le code " >
+                                     </p:inputText>
+               
+                  
+                      <p:outputLabel value="Prénom : "  class="" />
+                 <p:inputText value="#{userController.use.firstNameUsedAr}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer le Prénom " >
+                                     </p:inputText>
+    
+
+                
+                   <p:outputLabel value="Nom : "  class="" />
+                       <p:inputText value="#{userController.use.nameUsedAr}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer le Nom " >
+                                                                                        </p:inputText>  
+              
+
+                  <p:outputLabel value="Téléphone : "  class="" />           
+          <p:inputMask value="#{userController.use.telfUsedPers}" 
+                     mask="99999999"
+                       required="true" 
+                      requiredMessage="Veuillez entrer Téléphone "
+                      style="width: 300px"
+                         class="form-control"
+                         type="tel"/>
+                     
+              
+                                       <p:outputLabel value="Gender :"  class="" />
+                                           <br/>
+
+                                         <p:selectOneMenu value="#{userController.use.sexUsed}" 
+                                       
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer gender " >
+                                                  <f:selectItem itemValue="Mâle" itemLabel="Mâle" />
+                                                 <f:selectItem itemValue="Femelle" itemLabel="Femelle" />
+                                        </p:selectOneMenu>
+        <br/>
+    
+
+                         <p:outputLabel value="Email :"  class="" />
+                       <p:inputText value="#{userController.use.email1Used}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer Email " 
+                                         type="email"
+                                         >
+                            
+                       </p:inputText>                                
+
+
+                         
+                          <p:outputLabel value="Mot de passe : "    />
+                    <p:password 
+                                value="#{userController.use.pwdUser}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         id="admin-form"
+                                         feedback="true"
+                                         requiredMessage="Veuillez entrer Password " />
+                              
+                     
+                                <p:outputLabel value="Addresse :"     />
+                                      <p:inputText value="#{userController.use.address1Used}" 
+                                         class="form-control" 
+                                         style="width: 300px"
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer l'adresse " >
+                            </p:inputText>
+                                      
+   <br/>
+                                      
+                 <p:outputLabel value="Type User :"  class="" />                                         
+                 <p:selectOneRadio value="#{userController.use.idTypeUser}" 
+                                   
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer type User " >
+                                         <br/>
+                                      <f:selectItem itemValue = "Developer" itemLabel = "Developer" /> 
+                                      <f:selectItem itemValue = "Admin" itemLabel = "Admin" />
+                                      <f:selectItem itemValue = "Support-client" itemLabel = "Support-client" />
+                                           </p:selectOneRadio>
+      
+           
+                                      <h:commandButton 
+                                          value="S'inscrire" 
+                                          class="btn btn-success" 
+                                          onclick=  "return confirm('Complété avec succès')"  
+                                          action="#{userController.addRegisterUser()}"
+                                      style="margin: 20px"/>
+                            
+       <br/>
+        
+                                      
+                             <h:messages style="background: white" /> 
+                    </h:form>
+                    </f:view>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </f:view>
+
+</html> 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+            xmlns:p="http://primefaces.org/ui"
+>
+    <f:view transient="true" >
+        <ui:composition template="/template/template.xhtml" >
+
+            <ui:define name="css">
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="background.css" />
+            </ui:define>
+
+            <ui:define    name="header" >
+               <img src="resources/css/arabsoft.png"       width="180" align="left" /> 
+            </ui:define>
+<br/>
+
+            <ui:define name="content">
+                <br/>
+                
+               <center>
+                               <h1 style="color:  midnightblue" > Créer un DeBug </h1>  
+                          </center>
+                <img src="resources/css/decbug.png" style="  width: 50%; height:100%;"   align="right" /> 
+                
+                <div class="container">
+                    <f:view>
+                        <h:form class="form-horizontal" style=" margin: 50px">
+                            
+                        <p:outputLabel value="Code:" class="" />
+                                        <br/>
+                                        <p:inputText value="#{decbugController.addedBugg.idDecbug}" 
+                                                     required="true" 
+                                                     requiredMessage="Veuillez entrer le code " 
+                                                     style="width:300px" />
+    <br/>                                     
+                         
+                                        <p:outputLabel value="Titre:" class="" />
+                                        <br/>
+                                        <p:inputText value="#{decbugController.addedBugg.titre}" 
+                                                     required="true" 
+                                                     requiredMessage="Veuillez entrer le titre " 
+                                                     style="width:300px" />
+                                
+                      <br/>      
+                            
+                            <p:outputLabel value="Date debut: " 
+                                           />
+                            
+                            <br/> 
+                            
+                            <p:calendar  value="#{decbugController.addedBugg.datedebut}" 
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer la date debut"
+                                         pattern="yyyy-MM-dd" type="date" 
+                                         showOn="button"
+                                         timeZone="GMT"
+                                         >
+                           
+                     </p:calendar>
+                            
+                            
+                   
+                            
+                  
+    <br/>  
+                            <p:outputLabel value="Date fin: " class="" />
+                            <br/>
+                            <p:calendar value="#{decbugController.addedBugg.datefin}" 
+                                         required="true" 
+                                         requiredMessage="Veuillez entrer la date fin "
+                                         pattern="yyyy-MM-dd" type="date"
+                                         showOn="button"
+                                         timeZone="GMT">
+                                </p:calendar>
+     <br/>
+ 
+                                        <p:outputLabel value="Description : " class="" />
+                <br/>                        
+                                       <p:inputTextarea value="#{decbugController.addedBugg.description}" 
+                                                     required="true" 
+                                                     requiredMessage="Veuillez entrer la description "  
+                                                     style="width:300px; height:200px; " />
+                                       <br/>
+                   
+               
+                                       <p:commandButton 
+                                       value="Save" 
+                                       class="btn btn-success" 
+                                       onclick=  "return confirm('Complété avec succès')"  
+                                       action="#{decbugController.addBug()}" 
+                                       style="margin: 20px">
+                                       <i class="pi pi-spin pi-spinner" style="font-size: 3em"/>
+                                       </p:commandButton>   
+                  
+                            
+                            <p:messages style="background-color: #f7e1b5"/>
+                            
+                        </h:form>
+                    </f:view>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+    </f:view>
+
+
+
+</html>
+

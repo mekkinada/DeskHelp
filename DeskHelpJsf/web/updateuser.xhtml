@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+       >
+    <f:view transient="true" >
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+
+ <ui:define    name="header" >
+               <img src="resources/css/arabsoft.png"       width="180" align="left" /> 
+            </ui:define>
+
+            <ui:define name="content">
+                <div class="container">
+                    
+                            <f:view>
+                                <center>
+      <h2 style="color: black">Mettre à jour User</h2> 
+</center>
+                                <h:form class="form-horizontal" style="margin: 100px 0 0 250px ">
+                              
+                                    
+                              
+                                    
+                                     <div class="form-group">
+                                         
+                                        <p:outputLabel value="Prénom :"  class="control-label col-sm-2" />
+                                       
+                                        <p:inputText 
+                                                     value="#{userController.updatedUse.firstNameUsedAr}" 
+                                                      
+                                                     required="true" 
+                                                     requiredMessage="Please enter first Name" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+
+                                       <div class="form-group">
+                                        <p:outputLabel value="Nom :" 
+                                                       
+                                                       class="control-label col-sm-2" />
+                                        <p:inputText 
+                                                     value="#{userController.updatedUse.nameUsedAr}" 
+                                                      
+                                                     required="true" 
+                                                     requiredMessage="Please enter name Used" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                                    
+                                         <div class="form-group">
+                                        <p:outputLabel value="Téléphone :" 
+                                                        
+                                                       class="control-label col-sm-2" />
+                                        
+                                        <p:inputText 
+                                                     value="#{userController.updatedUse.telfUsedPers}" 
+                                                        
+                                                     required="true" 
+                                                     requiredMessage="Please enter Téléphone}" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                    </div>
+                      
+                                    
+                                          <div class="form-group">
+                                        <p:outputLabel value="sexe:" 
+                                                       class="control-label col-sm-2" />
+                                        
+                                       <p:selectOneMenu 
+                                                     value="#{userController.updatedUse.sexUsed}" 
+                                                       
+                                                     required="true" 
+                                                     requiredMessage="Please enter sex" 
+                                                     >
+                                        <f:selectItem itemValue="Male" itemLabel="male" />
+                                        <f:selectItem itemValue="Female" itemLabel="female" />
+                                        </p:selectOneMenu>
+                                    </div>
+                                  
+                       <div class="form-group">
+                                        <p:outputLabel value="Email :" 
+                                                     
+                                                       class="control-label col-sm-2" />
+                                        <p:inputText 
+                                                     value="#{userController.updatedUse.email1Used}" 
+                                                  
+                                                     required="true" 
+                                                     requiredMessage="Please enter email " 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                       </div>
+                                    
+                      <div class="form-group">
+                                             
+                                        <p:outputLabel value="Password :" 
+                                                       class="control-label col-sm-2" />
+                                        <p:inputText 
+                                                     value="#{userController.updatedUse.pwdUser}" 
+                                                     
+                                                     type="password"
+                                                     required="true" 
+                                                     requiredMessage="Please enter la password" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                     </div>
+                                          
+                                                 <div class="form-group">
+                                        <p:outputLabel value="address :" 
+                                                       
+                                                       class="control-label col-sm-2" />
+                                        
+                                        <p:inputText 
+                                                    value="#{userController.updatedUse.address1Used}" 
+                                                    
+                                                     required="true" 
+                                                     requiredMessage="Please enter address  }" 
+                                                     class="form-control" 
+                                                    style="width:300px" />
+                                    </div>
+                                   
+                                              <div class="form-group">
+                                        <p:outputLabel value="type User :" 
+                                                   
+                                                       class="control-label col-sm-2" />
+                                        
+                                        <p:selectOneRadio 
+                                            value="#{userController.updatedUse.idTypeUser}" 
+                                                     required="true" 
+                                                     requiredMessage="Please enter type User" 
+                                                     >
+                                         
+                                             <f:selectItem itemValue = "Developer" itemLabel = "Developer" /> 
+                                             <f:selectItem itemValue = "Admin" itemLabel = "Admin" />
+                                             <f:selectItem itemValue = "Support-client" itemLabel = "Support-client" /> 
+                                            
+                                     </p:selectOneRadio>
+    
+                                    </div>
+                         
+                                          
+                            
+                                 
+                                                   
+                               <h:commandLink class="btn btn-success" 
+                                                   role="button" 
+                                                   style="margin: 0 0 0 250px" 
+                                                    action="#{userController.updateUser()}">
+                                        <span class="glyphicon glyphicon-pencil" ></span>
+                                        Save
+                                    </h:commandLink>        
+                                  
+                                    <br/>
+                                    <br/>
+                                    <p:messages style="background: white" />
+                                    
+                                    
+                              
+                            
+                                
+                                
+                                        </h:form>
+                            </f:view>
+
+
+                       
+                </div>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>

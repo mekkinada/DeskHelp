@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui">
+    <f:view transient="true" >
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+
+
+            
+           <ui:define name="header" >
+                 <img src="resources/css/arabsoft.png"       width="180" align="left" /> 
+          </ui:define>
+
+            <ui:define name="content">
+                 <br/>
+                  <center>
+                
+                 <h2 style="color:  midnightblue">Mettre à jour  du un Ticket </h2>
+                 
+               </center>
+                 <img src="resources/css/dev1.png" style="  width:45%; height:100%;"   align="right" /> 
+                <div class="container">
+
+                            <f:view>
+
+
+                                <h:form class="form-horizontal" style="margin: 100px 0 0 250px ">
+                                   
+                                        <p:outputLabel value="Code :"  />
+                                        
+                                          <br/>                                 
+
+                                        <p:inputText 
+                                            value="#{ticketController.updatedTickee.idTicket}" 
+                                                    
+                                                     required="true" 
+                                                     requiredMessage="Entrez s'il vous plait code" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                          <br/>                                 
+ <br/>  
+                                    
+                            
+                                        <p:outputLabel value="Date Debut :"  />
+                                          <br/>                                 
+
+                                             <p:calendar 
+                                                     value="#{ticketController.updatedTickee.dateDebutTicket}"
+                                                 
+                                                     required="true" 
+                                                     requiredMessage="Entrez s'il vous plait date debut" 
+                                                     pattern="yyyy-MM-dd" type="date" showOn="button"> 
+                                      </p:calendar>
+                     <br/>                                 
+ <br/>  
+                                    
+                               
+                                        <p:outputLabel value="Date fin :"  />
+                                          <br/>                                 
+
+                                        <p:calendar  
+                                                     value="#{ticketController.updatedTickee.dateDubetTicket}" 
+                                                 
+                                                     required="true" 
+                                                     requiredMessage="Entrez s'il vous plait date fin" 
+                                                     pattern="yyyy-MM-dd" type="date" showOn="button">
+                                           </p:calendar>
+                                        
+                                 
+ <br/>  
+      <br/>                                 
+                                
+                                        <p:outputLabel value="description :" 
+                                                       />
+                                          <br/>                                 
+
+                                        <p:inputText 
+                                                     value="#{ticketController.updatedTickee.description}" 
+                                                  
+                                                     required="true" 
+                                                     requiredMessage="Please enter le description" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                                
+         
+
+
+  <br/>                                 
+ <br/>  
+                                               
+          
+                                                   
+                        
+                                                   
+                               <h:commandLink class="btn btn-success" 
+                                                   role="button" 
+                                                   style="margin: 0 0 0 250px" 
+                                                   action="#{ticketController.updateTicket()}" 
+                                                   >
+                                        <span class="glyphicon glyphicon-pencil" ></span>
+                                        Save
+                                    </h:commandLink>   
+      
+                                                
+                                    <br/>
+                                    <br/>
+                                   
+                                    
+                                    <p:messages style="background: black" />
+                                </h:form>
+
+                                  
+                            </f:view>
+
+
+                </div>
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
+
+
+

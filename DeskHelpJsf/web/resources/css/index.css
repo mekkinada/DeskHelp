@@ -1,0 +1,55 @@
+body{
+    background-color: white;
+}
+
+
+#admin-form{
+    width: 45vw;
+    background-color:  #ebeeef;
+    height:60vh;
+    color: black;
+    border-radius: 7px;
+    padding: 35px 20px 0 35px;
+    margin: auto
+    
+}
+
+
+#admin-form input[type="submit"] {
+    background-color: white;
+    border: none;
+    padding: 5px 30px;
+    color: black ;
+    border-radius: 3px;
+    float: right;
+    margin-top: 10px;
+}
+
+
+#admin-form input[type="text"] {
+    
+    border-radius: 3px;
+    font-family: 'Ubuntu', sans-serif;
+    text-indent: 10px;
+    margin-left: 25px
+}
+#admin-form input[type="password"] {
+    
+    border-radius: 3px;
+    font-family: 'Ubuntu', sans-serif;
+    text-indent: 10px;
+     margin-left:5px
+}
+
+
+#loginn-form{
+    width: 45vw;
+   
+    height:30vh;
+  
+   
+    border-radius: 7px;
+    padding: 0;
+
+ }
+

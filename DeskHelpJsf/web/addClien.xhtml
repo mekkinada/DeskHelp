@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <f:view transient="true" >
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+            
+            <ui:define name="header" >
+                <img src="resources/css/arabsoft.png"       width="180" align="left" /> 
+             
+            </ui:define>
+
+            <ui:define name="content">
+              <br/>
+        
+                <center>
+                
+                 <h2 style="color:  midnightblue">Ajouter un Client </h2>
+                 
+               </center>
+                 <img src="resources/css/Registration.png" style=" margin:130px"   align="right" /> 
+           
+      
+                  
+                <div class="container">
+                   
+
+                            <f:view>
+
+
+                                <h:form class="form-horizontal" style="margin: 50px ">
+                                    
+                                     <p:outputLabel value="Code :" 
+                                                       class="control-label col-sm-2" />
+                                        
+                                        <p:inputText 
+                                                     required="true" 
+                                                     requiredMessage="Tapez le code" 
+                                                     value="#{decbugController.clien.idClient}" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+     <br/>                                    
+
+                                        <p:outputLabel value="Nom:" 
+                                                       class="control-label col-sm-2" />
+                                        
+                                        <p:inputText 
+                                                     required="true" 
+                                                     requiredMessage="Tapez le nom" 
+                                                     value="#{decbugController.clien.nom}" 
+                                                     
+                                                     class="form-control" 
+                                                     style="width:300px" />
+ 
+<br/> 
+
+                                        <p:outputLabel value="Prenom:" 
+                                                       class="control-label col-sm-2" />
+                                      
+                                        <p:inputText  
+                                                     required="true" 
+                                                     requiredMessage="Tapez le prenom" 
+                                                     value="#{decbugController.clien.prenom}" 
+                                               
+                                                     class="form-control" 
+                                                     style="width:300px" />
+ 
+<br/> 
+
+
+                                        <p:outputLabel value="Address:" 
+                                                       class="control-label col-sm-2" />
+                                    
+                                        <p:inputText id="address" 
+                                                     value="#{decbugController.clien.address}" 
+                                                     required="true" 
+                                                     requiredMessage="Tapez la address " 
+                                                    
+                                                     class="form-control" 
+                                                     style="width:300px" />
+<br/> 
+
+
+
+                                        <p:outputLabel value="Email:" 
+                                                       class="control-label col-sm-2" />
+                                   
+                                        <p:inputText 
+                                                     value="#{decbugController.clien.email1Used}" 
+                                           
+                                                     class="form-control" 
+                                                     required="true" 
+                                                     requiredMessage="Tapez le email " 
+                                                     style="width:300px" 
+                                                     type="email"
+                                                     />
+                                       
+                                        
+                                        
+<br/> 
+      
+                                    
+
+                                        <p:outputLabel value="Mot de passe :"    class="control-label col-sm-2" />
+                                      
+                                       <p:password   id="admin-form"
+                                                     feedback="true" 
+                                                     requiredMessage="Tapez la Mot de passe  " 
+                                                     value="#{decbugController.clien.pwdUser}" 
+                                                     class="form-control" 
+                                                     style="width:300px" 
+                                                      />
+                                       
+                                            
+               
+                                      
+<br/> 
+
+    
+
+                                        <p:outputLabel value="Téléphone:"   class="control-label col-sm-2" />
+                                    
+          <p:inputMask value="#{decbugController.clien.telf}" 
+                     mask="99999999"
+                       required="true" 
+                      requiredMessage="Veuillez entrer Téléphone "
+                      style="width: 300px"
+                       class="form-control"/>
+<br/> 
+
+
+
+                                        <p:outputLabel value="Type Client"  class="control-label col-sm-2" />
+                                        <br/> 
+                                           <p:selectOneRadio 
+                                          
+                                               value="#{decbugController.clien.idTypeClient}" 
+                                              
+                                                required="true"  
+                                                requiredMessage=" Tapez le Type Client" 
+                                                     >
+                                    <br/> 
+                 <f:selectItem itemValue = "Étranger" itemLabel = "Étranger" /> 
+                  <br/> 
+                 <f:selectItem itemValue = "Originaire" itemLabel = "Originaire" />
+                 </p:selectOneRadio>
+<br/> 
+
+                                    
+<h:commandButton 
+                                          value="Save" 
+                                          class="btn btn-success" 
+                                          onclick=  "return confirm('Complété avec succès')"  
+                                          action="#{decbugController.addClien()}" 
+                                          style="margin: 20px"/>   
+                                 
+                                    
+                                    <p:messages  style="background-color: red " />
+                                </h:form>
+                            </f:view>
+
+
+                        </div>
+               
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
+

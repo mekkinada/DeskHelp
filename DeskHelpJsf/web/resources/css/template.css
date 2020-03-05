@@ -1,0 +1,48 @@
+html,body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url("#{resources['img/background.jpg']}");
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+h1,h2,h3{
+    font-family: 'Arial', cursive;
+    letter-spacing: 1px;
+}
+
+
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 75px;
+    background: #ebeeef;
+    color: black;
+}
+
+#header h1{
+    margin-left: 25px;
+}
+
+#content{
+    width: 100vw;
+    min-height: 100vh;
+    margin-top: 75px
+}
+#footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 40px;
+    background: #474F58;
+    color: white;
+    text-align: center
+}
+#footer p{
+    margin-top: 0
+}

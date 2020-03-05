@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Support-Client</title>
+        </h:head>
+        <h:body>
+            <h:form>  
+                <p:growl id="messages"/>
+
+                <p:menubar>
+                    <p:submenu label="Support-Client" icon="ui-icon-home">
+                       
+                        <p:submenu label="Nouveau" icon="ui-icon-plus">
+                            <p:menuitem value="Ticket" url="/faces/addTicket.xhtml" />
+                          
+                                                          
+                            </p:submenu>
+                        <p:submenu label="View" icon="ui-icon-search">
+                    
+                
+                <p:menuitem value="Dec_Bug" url="/faces/affBug.xhtml" />
+                <p:menuitem value="Ticket" url="/faces/affTicket.xhtml" />
+                        </p:submenu>
+                        <p:separator />
+                        <p:menuitem value="Logout" url="/faces/index.xhtml" />
+                    </p:submenu>
+
+                    <p:submenu label="Help" icon="ui-icon-help">
+                        <p:menuitem value="Version 1.0" url="#" />
+                    </p:submenu>
+                   
+
+
+                </p:menubar>
+            </h:form>
+
+            <div class="ui-g">
+                <div class="ui-g-12">
+                    <ui:insert name="content" />
+                </div>
+            </div>
+        </h:body>
+    </f:view>
+</html>

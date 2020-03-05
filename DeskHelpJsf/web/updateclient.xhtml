@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui"
+       >
+    <f:view transient="true">
+    <ui:composition  template="/template/template.xhtml">
+        <ui:define name="css" >
+            <h:outputStylesheet library="css" name="bootstrap.min.css" />
+            <h:outputStylesheet library="css" name="dashboard.css" />    
+        </ui:define>
+
+
+        <ui:define name="header" >
+            <h2 style="color: black">Mettre a jour de client</h2> 
+          
+        </ui:define>
+
+        <ui:define name="content">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <f:view>
+
+
+                            <h:form class="form-horizontal" style="margin: 100px 0 0 250px ">
+                                <h1 style="margin: 50px 0 0 -300px">Mettre-à-jour</h1>
+<div class="form-group">
+                                    
+                                    <p:outputLabel value="Nom:" 
+                                                   class="control-label col-sm-2" />
+                                    
+                                    <p:inputText 
+                                                 required="true" 
+                                                 requiredMessage="Entrez s'il vous plait le nom" 
+                                                 
+                                                 value="#{decbugController.updatedClien.nom}"                      
+                                                
+                                                 class="form-control" 
+                                                 style="width:300px" />
+</div>
+                                
+<div class="form-group">
+                                    <p:outputLabel value="Prenom:" class="control-label col-sm-2" />
+                                   
+                                    <p:inputText 
+                                                 required="true" 
+                                                 requiredMessage="Entrez s'il vous plait le pernom "  
+                                                 
+                                                 value="#{decbugController.updatedClien.prenom}" 
+                                                 
+                                                 
+                                                 class="form-control" 
+                                                 style="width:300px" />
+</div>
+
+<div class="form-group">
+                                    <p:outputLabel value="Address:" class="control-label col-sm-2" />
+                                    
+                                    <p:inputText 
+                                                 value="#{decbugController.updatedClien.address}" 
+                                                 
+                                                 required="true" 
+                                                 requiredMessage="Entrez s'il vous plait la address "  
+                                                 class="form-control" 
+                                                 style="width:300px"
+                                                 />
+</div>
+
+
+                                
+                                    <div class="form-group">
+                                             
+                                        <p:outputLabel value="Password :" 
+                                                       class="control-label col-sm-2" />
+                                        <p:inputText 
+                                                       value="#{decbugController.updatedClien.pwdUser}" 
+                                                     
+                                                     type="password"
+                                                     required="true" 
+                                                     requiredMessage="Entrez s'il vous plait  la password" 
+                                                     class="form-control" 
+                                                     style="width:300px" />
+                     </div>
+
+<div class="form-group">
+                                    <p:outputLabel value="Email :" class="control-label col-sm-2" />
+                                    
+                                    <p:inputText 
+                                                 required="true" 
+                                                 requiredMessage="Entrez s'il vous plait la email" 
+                                                 
+                                                 value="#{decbugController.updatedClien.email1Used}" 
+                                                  
+                                                 class="form-control" 
+                                                 style="width:300px" >
+                                      
+                                    </p:inputText>
+</div>
+                                
+<div class="form-group">
+                                    <p:outputLabel value="Telf:" 
+                                                   
+                                                   class="control-label col-sm-2" />
+                                    
+<p:inputText 
+            value="#{decbugController.updatedClien.telf}" 
+           
+            required="true" 
+            requiredMessage="Entrez s'il vous plait le telf" 
+            >
+                                          <f:convertNumber integerOnly="true" 
+                                                           minIntegerDigits="11" 
+                                                           maxIntegerDigits="20" />
+                                     </p:inputText>
+</div>
+
+                              
+                          <div class="form-group">
+                                        <p:outputLabel value="Type client  :"  class="control-label col-sm-2" />
+                                    <br/>
+
+                               <p:selectOneRadio  
+                                   value="#{decbugController.updatedClien.idTypeClient}" 
+                                                 required="true" 
+                                                 requiredMessage="Entrez s'il vous plait le type client" 
+                                                 >
+                    <br/>
+                      
+                 <f:selectItem itemValue = "Étranger" itemLabel = "Étranger" /> 
+                 <f:selectItem itemValue = "Originaire" itemLabel = "Originaire" />
+                                           
+                                            
+                                     </p:selectOneRadio>
+                              </div>
+  
+                                
+                                               
+                                                                
+                                       <h:commandLink class="btn btn-success" 
+                                                   role="button" 
+                                                   style="margin: 0 0 0 250px" 
+                                                   action="#{decbugController.updateCLient()}">
+                                        <span class="glyphicon glyphicon-pencil" ></span>
+                                        Save
+                                    </h:commandLink>                    
+                                                  
+                      
+                                <p:messages style="background-color: wheat" />
+                            </h:form>
+
+
+                        </f:view>
+
+
+                    </div>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+        </f:view>
+</html>
+

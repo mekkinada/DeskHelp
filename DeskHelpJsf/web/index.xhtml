@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<f:view  transient="true"
+         xmlns:f="http://xmlns.jcp.org/jsf/core"
+         xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      >
+    <ui:composition template="/template/template.xhtml">
+        <ui:define name="css">
+            <h:outputStylesheet library="css" name="index.css" />
+       </ui:define>
+     
+           
+        <ui:define name="content">
+      <img src="resources/css/arabsoft.png"  width="380"  class="center-block" />  
+         
+<h:form id="admin-form"   prependId="false">
+                                                                 
+    <img src="resources/css/Fdeskhelp.jpg" id="loginn-form" />
+        <center> <h1 >Authentification</h1> </center>
+   
+       
+            
+        <h:outputLabel value="E--mail     " />
+       
+        
+    <h:inputText    value="#{dashBoardController.email1Used}"  />
+            
+<br/><br/>
+        
+<h:outputLabel value="Mot-passe"  />
+<h:inputSecret   value="#{dashBoardController.pwdUser}" />
+
+<br/><br/>
+  
+ <h:commandButton value="S'identifier" 
+                  action="#{dashBoardController.authorize}" />
+ 
+       <h:messages style="background-color: red"/>  
+       
+ <p>Enregistrez-vous ici en cliquant sur le lien si tu étais
+    
+     <h:commandLink                                    action="#{userController.inscriptionUser()}"  
+                                                    class="btn btn-info "
+                                                    role="button"  >
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                   User
+                                                </h:commandLink> 
+
+     ou
+
+        <h:commandLink  
+                    action="#{clientController.inscriptionClient()}"
+                    class="btn btn-info "
+                    role="button"  >
+                     <span class="glyphicon glyphicon-trash"></span>
+                    Client
+                    </h:commandLink> 
+  
+
+  </p>
+
+                    
+                       
+                     
+
+ 
+                     </h:form>
+                                </ui:define>
+                                            </ui:composition>
+                                                                 </html> 
+</f:view> 
+
+

@@ -1,0 +1,42 @@
+body{
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+#courses-form #title{
+    font-weight: bold
+}
+ul{
+    
+    background-color: brown;
+    
+}
+
+ul a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold
+}
+
+ul a:hover {
+    color: yellow;
+}
+
+#btn{
+    position: absolute;
+   color: brown;
+   margin-left: 1250px;
+margin-top: -120px;
+   border: none;
+   background-color: white;
+   border: 2px solid brown;
+   padding: 5px 10px;
+   border-radius: 7px;
+}
+
+#color1{
+background: red;
+}

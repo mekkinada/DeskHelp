@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:p="http://primefaces.org/ui"
+        >
+    <f:view transient="true" >
+        <ui:composition  template="/template/template.xhtml">
+            <ui:define name="css" >
+                <h:outputStylesheet library="css" name="bootstrap.min.css" />
+                <h:outputStylesheet library="css" name="dashboard.css" />    
+            </ui:define>
+
+ <ui:define    name="header" >
+               <img src="resources/css/arabsoft.png"       width="180" align="left" /> 
+            </ui:define>
+
+
+
+            <ui:define name="content">
+     
+           
+               <center>
+                               <h1 style="color:  midnightblue" > Mettre à jour validée du deBug</h1>  
+                          </center>
+                <img src="resources/css/decbug.png" style="  width: 45%; height:100%;"   align="right" /> 
+                
+                <div class="container">
+                    
+                            <f:view>
+
+
+                                <h:form class="form-horizontal" style="margin: 100px 0 0 250px ">
+                          
+                                    <p:outputLabel value="Titre :" />
+                                    <p:inputText   
+                                                 value="#{decbugController.updatedBug.titre}"   
+                                                 class="form-control" 
+                                                 style="width:300px"
+                                                 required="true" 
+                                                 requiredMessage="Entrez s'il vous plait le Titre" />
+
+                        
+<br/>
+                                        <p:outputLabel value="Date debut:"  />
+                                                         <br/>
+
+                                        <p:calendar 
+                                                     value="#{decbugController.updatedBug.datedebut}"   
+                                                     required="true" 
+                                                     requiredMessage="Entrez s'il vous plait date debut" 
+                                                     pattern="yyyy-MM-dd" 
+                                                     type="date"
+                                                     showOn="button"> 
+                                      </p:calendar>
+<br/>
+                                    
+                           
+                                        <p:outputLabel value="Date fin:"  />
+                                                         <br/>
+
+                                       <p:calendar  
+                                                    value="#{decbugController.updatedBug.datefin}"   
+                                                    required="true" 
+                                                    requiredMessage="Entrez s'il vous plait date fin" 
+                                                    pattern="yyyy-MM-dd" 
+                                                    type="date"
+                                                    showOn="button" >
+
+                                           </p:calendar>
+                                        
+     <br/>
+                                    
+                                
+                                    <p:outputLabel value="Description :"  />
+                                    
+                                    <p:inputText   
+                                                 value="#{decbugController.updatedBug.description}" 
+                                                 class="form-control" 
+                                                 style="width:300px"
+                                                 required="true" 
+                                                 requiredMessage="Entrez s'il vous plait la Description"  />
+   <br/>
+                                    
+  
+ 
+  
+                                          
+<h:outputText value="Activation :"  />
+        <br/>
+
+        <p:selectOneMenu value="#{decbugController.updatedBug.activeDecbug}" 
+                                       
+                                         required="true" 
+                                         requiredMessage="Entrez s'il vous plait activation de debug " >
+                                                  <f:selectItem itemValue="Valide" itemLabel="Valide" />
+                                                 <f:selectItem itemValue="Refusé" itemLabel="Refusé" />
+                                                 <f:selectItem itemValue="Rejete pour modification" itemLabel="Rejete pour modification" />
+                                        </p:selectOneMenu>
+
+                <br/>                        
+
+ 
+                                        <p:outputLabel value="Observation: " class="" />
+                <br/>                        
+                <p:inputTextarea value="#{decbugController.updatedBug.rqActiveDecbug}" 
+                                                     required="true" 
+                                                     requiredMessage="Entrez s'il vous plait observation"  
+                                                     style="width:300px; height:200px; " />
+                 <br/>
+        
+                                  <br/>
+
+
+   
+   
+       
+          <h:commandLink                           class="btn btn-success" 
+                                                   role="button" 
+                                                   style="margin: 0 0 0 250px" 
+                                                   action="#{decbugController.updateDecBug()}"
+                                                    >
+          <span class="glyphicon glyphicon-pencil" ></span>
+                                        Save
+                                    </h:commandLink>    
+           
+            
+            <h:messages style="background:red" />
+                                </h:form>
+
+
+                            </f:view>
+
+
+                        </div>
+                   
+            </ui:define>
+        </ui:composition>
+    </f:view>
+</html>
+
